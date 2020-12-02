@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+           version="2.5">
+
+<!--    注册事物管理器filter 事务原则 要么都不开启 要么都开启-->
+    <filter>
+        <filter-name>TransactionManagerFilter</filter-name>
+        <filter-class>com.atguigu.filter.TransactionManagerFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>TransactionManagerFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>com.atguigu.filter.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/OrderServlet</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>FilterCharacter</filter-name>
+        <filter-class>com.atguigu.filter.FilterCharacter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>FilterCharacter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.atguigu.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RegistServlet</servlet-name>
+        <servlet-class>com.atguigu.servlet.RegistServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegistServlet</servlet-name>
+        <url-pattern>/RegistServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BaseServlet</servlet-name>
+        <servlet-class>com.atguigu.servlet.BaseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BaseServlet</servlet-name>
+        <url-pattern>/BaseServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>BookServlet</servlet-name>
+        <servlet-class>com.atguigu.servlet.BookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookServlet</servlet-name>
+        <url-pattern>/BookServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BookClientServlet</servlet-name>
+        <servlet-class>com.atguigu.servlet.BookClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookClientServlet</servlet-name>
+        <url-pattern>/BookClientServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>KaptchaServlet</servlet-name>
+        <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>KaptchaServlet</servlet-name>
+        <url-pattern>/KaptchaServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>com.atguigu.servlet.UserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/UserServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>com.atguigu.servlet.CartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/CartServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrderServlet</servlet-name>
+        <servlet-class>com.atguigu.servlet.OrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderServlet</servlet-name>
+        <url-pattern>/OrderServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
